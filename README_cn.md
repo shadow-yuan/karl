@@ -1,6 +1,6 @@
 # [karl](https://github.com/shadow-yuan/karl)
 
-[![Build status](https://ci.appveyor.com/api/projects/status/85wbmr7o9cxcnq9q?svg=true)](https://ci.appveyor.com/project/shadow-yuan/karl)  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1a937e18634342d1a044d02e704c408c)](https://www.codacy.com/manual/shadow-yuan/karl?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=shadow-yuan/karl&amp;utm_campaign=Badge_Grade)
+[![Build status](https://ci.appveyor.com/api/projects/status/85wbmr7o9cxcnq9q?svg=true)](https://ci.appveyor.com/project/shadow-yuan/karl)  [![Coverity Scan Build Status](https://scan.coverity.com/projects/19884/badge.svg)](https://scan.coverity.com/projects/shadow-yuan-karl)  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1a937e18634342d1a044d02e704c408c)](https://www.codacy.com/manual/shadow-yuan/karl?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=shadow-yuan/karl&amp;utm_campaign=Badge_Grade)  [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/shadow-yuan/karl.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/shadow-yuan/karl/context:cpp)
 
 [English version](README.md)
 
@@ -15,7 +15,7 @@
 #### CMake
 推荐使用 CMake 进行 karl 库构建，需要 CMake 版本等于或高于 3.8。我们需要将 CMake 编译后的文件放在与源文件不同的目录中，因此，建立一个`build`目录并在其中运行 CMake。
 
-```
+```c
   mkdir build
   cd build
   cmake ..
@@ -23,7 +23,7 @@
 
   如果你在 Unix 平台，接下来你可以直接使用`make`命令编译：
 
-```
+```c
   make
 ```
 
@@ -35,7 +35,7 @@
 
 在源码目录运行如下命令编译 karl 静态库和一个示例程序：
 
-```
+```c
   make all
 ```
 
@@ -45,7 +45,7 @@
 
 ### 头文件包含
 
-不管是直接使用 karl 源码还是用静态库，你需要将`include`目录拷贝到一个固定目录（项目目录、系统目录或者其他地方），然后在`Visual Studio`或`Makefile`中指定头文件目录。
+不管是直接使用 karl 源码还是用静态库，你需要将`include`目录拷贝到一个固定目录（项目目录、系统目录或者其它地方），然后在`Visual Studio`或`Makefile`中指定头文件目录。
 
 在源码中包含代码如下：
 

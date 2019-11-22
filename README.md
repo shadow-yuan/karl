@@ -1,6 +1,6 @@
 # [karl](https://github.com/shadow-yuan/karl)
 
-[![Build status](https://ci.appveyor.com/api/projects/status/85wbmr7o9cxcnq9q?svg=true)](https://ci.appveyor.com/project/shadow-yuan/karl)  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1a937e18634342d1a044d02e704c408c)](https://www.codacy.com/manual/shadow-yuan/karl?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=shadow-yuan/karl&amp;utm_campaign=Badge_Grade)
+[![Build status](https://ci.appveyor.com/api/projects/status/85wbmr7o9cxcnq9q?svg=true)](https://ci.appveyor.com/project/shadow-yuan/karl)  [![Coverity Scan Build Status](https://scan.coverity.com/projects/19884/badge.svg)](https://scan.coverity.com/projects/shadow-yuan-karl)  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1a937e18634342d1a044d02e704c408c)](https://www.codacy.com/manual/shadow-yuan/karl?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=shadow-yuan/karl&amp;utm_campaign=Badge_Grade)  [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/shadow-yuan/karl.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/shadow-yuan/karl/context:cpp)
 
 [中文版](README_cn.md)
 
@@ -15,7 +15,7 @@ There are several ways to incorporate karl into your project.
 #### CMake
 It is recommended to use CMake for karl library build, which requires CMake version equal to or higher than 3.8. We need to put the CMake compiled file in a different directory than the source file, so create a `build` directory and run CMake inside it.
 
-```
+```c
   mkdir build
   cd build
   cmake ..
@@ -23,7 +23,7 @@ It is recommended to use CMake for karl library build, which requires CMake vers
 
   If you are on a Unix platform, you can compile directly with the `make` command:
 
-```
+```c
   make
 ```
 
@@ -35,7 +35,7 @@ If you installed `gcc, gcc-c++`, you can use `Makefile` to compile karl:
 
 Run this command in the directory with the source code and it will automatically compile static library and an example program.
 
-```
+```c
   make all
 ```
 
@@ -160,6 +160,6 @@ The following is an example of general usage:
 
 See `example/main.cc` for more detailed sample code.
 
-### other
+### Other
 
 During the development process, I made some choices about the details, but it does not affect the convenience of the use of the karl. There may also be undiscovered issues in the code. If you have any questions, please contact me (shadow_yuan@qq.com).
