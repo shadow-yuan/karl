@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// A c++ simple json library
+// An easy to use c++ json library
 // Version 1.0.0
 // https://github.com/shadow-yuan/karl
 //
