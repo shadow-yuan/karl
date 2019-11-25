@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// A c++ simple json library
+// An easy to use c++ json library
 // Version 1.0.0
 // https://github.com/shadow-yuan/karl
 //
@@ -1342,6 +1342,14 @@ bool json::to_bool() const {
 }
 
 uint64_t json::to_uint64() const {
+    auto obj = current_value();
+    if (!obj || obj->type() != value_type::kNumber) {
+        THROW_TYPE_ERROR("type must be number, but is " + std::string(current_type()));
+    }
+    return *As<json_number>(obj);
+}
+
+int64_t json::to_int64() const {
     auto obj = current_value();
     if (!obj || obj->type() != value_type::kNumber) {
         THROW_TYPE_ERROR("type must be number, but is " + std::string(current_type()));

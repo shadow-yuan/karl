@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// A c++ simple json library
+// An easy to use c++ json library
 // Version 1.0.0
 // https://github.com/shadow-yuan/karl
 //
@@ -352,15 +352,16 @@ public:
             std::string(typeid(typename std::remove_cv<Ty>::type).name()));
     }
 
+    std::string to_string() const;
+    uint64_t to_uint64() const;
+    int64_t to_int64() const;
+    double to_double() const;
+    bool to_bool() const;
+
 private:
     std::shared_ptr<json_value> current_value() const;
     void fill_current_value(std::shared_ptr<json_value> obj);
     const char* current_type() const;
-
-    std::string to_string() const;
-    uint64_t to_uint64() const;
-    double to_double() const;
-    bool to_bool() const;
 
     json& assign(const std::string& s);
     json& assign(uint64_t v);
