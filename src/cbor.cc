@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// A c++ simple json library
+// An easy to use c++ json library
 // Version 1.0.0
 // https://github.com/shadow-yuan/karl
 //
@@ -246,7 +246,8 @@ std::vector<uint8_t> build_string(const std::string& str) {
     } else if (size <= std::numeric_limits<uint32_t>::max()) {
         obj.write_character(0x7A);
         obj.write_number(static_cast<uint32_t>(size));
-    } else if (size <= std::numeric_limits<uint64_t>::max()) {
+    } else {
+        // (size <= std::numeric_limits<uint64_t>::max())
         obj.write_character(0x7B);
         obj.write_number(static_cast<uint64_t>(size));
     }
@@ -272,7 +273,8 @@ std::vector<uint8_t> build_array_prefix(size_t array_size) {
     } else if (array_size <= std::numeric_limits<uint32_t>::max()) {
         obj.write_character(0x9A);
         obj.write_number(static_cast<uint32_t>(array_size));
-    } else if (array_size <= std::numeric_limits<uint64_t>::max()) {
+    } else {
+        // (array_size <= std::numeric_limits<uint64_t>::max())
         obj.write_character(0x9B);
         obj.write_number(static_cast<uint64_t>(array_size));
     }
@@ -293,7 +295,8 @@ std::vector<uint8_t> build_object_prefix(size_t obj_size) {
     } else if (obj_size <= std::numeric_limits<uint32_t>::max()) {
         obj.write_character(0xBA);
         obj.write_number(static_cast<uint32_t>(obj_size));
-    } else if (obj_size <= std::numeric_limits<uint64_t>::max()) {
+    } else {
+        // (obj_size <= std::numeric_limits<uint64_t>::max())
         obj.write_character(0xBB);
         obj.write_number(static_cast<uint64_t>(obj_size));
     }

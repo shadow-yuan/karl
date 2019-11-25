@@ -16,6 +16,7 @@ all:
 clean:
 	cd src; make clean;
 	cd example; make clean;
+	rm -r ./output;
 
 
 rebuild: clean all
